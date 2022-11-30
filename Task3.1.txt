@@ -1,0 +1,43 @@
+[cloudera@quickstart Desktop]$ hdfs dfs -copyFromLocal /home/cloudera/Desktop/voyna-i-mir-tom-1.txt /user/cloudera
+[cloudera@quickstart Desktop]$ hdfs dfs -copyFromLocal /home/cloudera/Desktop/voyna-i-mir-tom-2.txt /user/cloudera
+[cloudera@quickstart Desktop]$ hdfs dfs -copyFromLocal /home/cloudera/Desktop/voyna-i-mir-tom-3.txt /user/cloudera
+[cloudera@quickstart Desktop]$ hdfs dfs -copyFromLocal /home/cloudera/Desktop/voyna-i-mir-tom-4.txt /user/cloudera
+[cloudera@quickstart Desktop]$ 
+------------------------------------------------
+
+--------------------------------------------
+[cloudera@quickstart Desktop]$ hdfs dfs -chmod 764 /user/cloudera/voyna-i-mir-tom-1.txt
+[cloudera@quickstart Desktop]$ hdfs dfs -chmod 764 /user/cloudera/voyna-i-mir-tom-2.txt
+[cloudera@quickstart Desktop]$ hdfs dfs -chmod 764 /user/cloudera/voyna-i-mir-tom-3.txt
+[cloudera@quickstart Desktop]$ hdfs dfs -chmod 764 /user/cloudera/voyna-i-mir-tom-4.txt
+
+[cloudera@quickstart Desktop]$ hadoop fs -getmerge /user/cloudera/voyna-i-mir-tom-1.txt /user/cloudera/voyna-i-mir-tom-2.txt /user/cloudera/voyna-i-mir-tom-3.txt /user/cloudera/voyna-i-mir-tom-4.txt /home/cloudera/Desktop/vim1-4.txt
+------------------------------------------------------------
+hdfs dfs -copyFromLocal /home/cloudera/Desktop/vim1-4.txt /user/cloudera
+[cloudera@quickstart Desktop]$ hdfs dfs -ls -h
+[cloudera@quickstart Desktop]$ hdfs dfs -du -h vim1-4.txt
+2.9 M  2.9 M  vim1-4.txt
+
+-----------------------------------------------------------------------
+[cloudera@quickstart Desktop]$ hdfs dfs -setrep -w 2 /user/cloudera/vim1-4.txt
+Replication 2 set: /user/cloudera/vim1-4.txt
+Waiting for /user/cloudera/vim1-4.txt ......
+
+[cloudera@quickstart Desktop]$ hdfs dfs -du -h vim1-4.txt
+2.9 M  5.8 M  vim1-4.txt
+--------------------------------------------------------------------
+[cloudera@quickstart Desktop]$ hadoop fs -cat /user/cloudera/vim1-4.txt | wc -l
+10272
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------
+
